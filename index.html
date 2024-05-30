@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <!-- Add more HTML content here -->
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'Overview')">Overview</button>
+            <button class="tablink" onclick="openTab(event, 'Education')">Education</button>
+            <button class="tablink" onclick="openTab(event, 'Experience')">Experience</button>
+            <button class="tablink" onclick="openTab(event, 'Skills')">Skills</button>
+            <button class="tablink" onclick="openTab(event, 'Contact')">Contact</button>
+        </div>
+
+        <div id="Overview" class="tabcontent">
+            <h2>Overview</h2>
+            <p>Hello! I am [Your Name]. Welcome to my personal page where you can learn more about me.</p>
+        </div>
+
+        <div id="Education" class="tabcontent">
+            <h2>Education</h2>
+            <p>I have completed my education from [Your University/School]. Here are the details...</p>
+        </div>
+
+        <div id="Experience" class="tabcontent">
+            <h2>Experience</h2>
+            <p>I have worked at [Your Company/Organization]. My roles and responsibilities included...</p>
+        </div>
+
+        <div id="Skills" class="tabcontent">
+            <h2>Skills</h2>
+            <p>Here are some of the skills I have acquired over the years...</p>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+            <h2>Contact</h2>
+            <p>You can reach me at [Your Email Address]. Feel free to connect with me on [Social Media].</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Default open tab
+        document.getElementsByClassName('tablink')[0].click();
+    </script>
+</body>
+</html>
